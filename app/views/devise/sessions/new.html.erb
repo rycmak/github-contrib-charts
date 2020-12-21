@@ -1,0 +1,25 @@
+<div class="container p-5">
+  <h2 class="text-center">Log in</h2>
+
+  <div class="text-center p-5">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs" style="margin-inline: 300px;">
+        <%= f.input :github_username,
+                    required: false,
+                    autofocus: true %>
+        <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "current-password" } %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
+
+      <div class="form-actions badge badge-pill badge-primary">
+        <%= f.button :submit, "Log in" %>
+      </div>
+    <% end %>
+
+    <div class="text-center mt-3  ">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
