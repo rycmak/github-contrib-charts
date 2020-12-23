@@ -10,15 +10,14 @@
                     required: true,
                     autofocus: true %>
         <%= f.input :github_username,
-                    required: true,
-                    autofocus: true %>
+                    required: true %>
+        <%= f.input :email,
+                    required: true %>
         <%= f.input :password,
                     required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "new-password" } %>
+                    required: true %>
       </div>
 
       <div class="form-actions badge badge-pill badge-primary">
@@ -30,6 +29,4 @@
       <%= render "devise/shared/links" %>
     </div>
   </div>
-
-
 </div>
