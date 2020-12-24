@@ -1,0 +1,9 @@
+<!-- Prepare a container for calendar. -->
+<div style="padding-left: 300px; padding-right: 300px;">
+  <p>@<%= user.github_username %></p>
+  <div class="chart-<%= user.github_username %>">
+    <script>
+      GitHubCalendar(".chart-<%= user.github_username %>", '<%= user.github_username %>', { responsive: true, summary_text: " ", global_stats: false, tooltips: true });
+    </script>
+  </div>
+</div>

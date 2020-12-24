@@ -4,10 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :rememberable, :validatable
 
-  # validates :github_username, presence: true, uniqueness: { case_sensitive: false }
-  # validates :first_name, presence: true, uniqueness: true
+  validates :github_username, presence: true, uniqueness: { case_sensitive: false }
+  validates :first_name, presence: true, uniqueness: true
 
-  # Want sign-up to authenticate with github_username amd first_name and not email
+  # Want sign-up to authenticate with github_username (or email)
 
   attr_writer :login
 

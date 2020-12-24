@@ -10,30 +10,12 @@
 />
 
 <div class="text-center">
-  <h1>GitHub Contributions for Batch-488</h1>
+  <h1>GitHub Contributions for Batch #488</h1>
   <p>Note: Contributions to private repositories do not show up.</p>
 </div>
 
-<!-- Prepare a container for your calendar. -->
-<div style="padding-left: 300px; padding-right: 300px;">
-  <p>@rycmak</p>
-  <div class="calendar">
-    <!-- Loading stuff -->
-    Loading your contributions chart...
+<%User.all.each do |user| %>
+  <div class="container">
+    <%= render partial: "chart", locals: {user: user} %>
   </div>
-</div>
-
-
-<script>
-    GitHubCalendar(".calendar", "rycmak", { responsive: true, summary_text: " ", global_stats: false, tooltips: true });
-
-    // or enable responsive functionality:
-    // GitHubCalendar(".calendar", "rycmak", { responsive: true });
-
-    // Use a proxy
-    <%# GitHubCalendar(".calendar", "rycmak", {
-       proxy (username) {
-         return fetch(`https://your-proxy.com/github?user=${username}`)
-       }
-    }).then(r => r.text()) %>
-</script>
+<% end %>
