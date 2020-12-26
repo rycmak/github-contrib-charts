@@ -14,8 +14,13 @@
   <p>Note: Contributions to private repositories do not show up.</p>
 </div>
 
-<%User.all.each do |user| %>
-  <div class="container">
+<!-- Display current user's chart first -->
+<div class="chart-container">
+  <%= render partial: "chart", locals: {user: current_user} %>
+</div>
+
+<% @users_except_current.all.each do |user| %>
+  <div class="chart-container">
     <%= render partial: "chart", locals: {user: user} %>
   </div>
 <% end %>

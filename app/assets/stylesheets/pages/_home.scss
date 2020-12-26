@@ -1,1 +1,17 @@
 // Specific CSS for your home-page
+
+.chart-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
