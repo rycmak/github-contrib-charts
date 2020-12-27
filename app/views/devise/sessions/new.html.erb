@@ -4,6 +4,7 @@
   <div class="text-center p-5">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs" style="margin-inline: 300px;">
+        <%= link_to "Sign in with Github", user_github_omniauth_authorize_path %>
         <%= f.input :login,
                     label: "Github Username",
                     required: true,
