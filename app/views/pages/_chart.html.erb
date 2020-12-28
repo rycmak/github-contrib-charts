@@ -2,9 +2,9 @@
 <div style="padding-left: 300px; padding-right: 300px;">
   <div class="user-info">
     <%= image_tag "https://avatars.githubusercontent.com/#{user.github_username}", class: "avatar" %>
-    <%= link_to "@#{user.github_username}", "http://github.com/#{user.github_username}", style: "margin-bottom: 0px;", target: :_blank %>
+    <%= link_to "@#{user.github_username}", "http://github.com/#{user.github_username}", style: "margin-bottom: 0px; color: #00cc00;", target: :_blank %>
   </div>
-  <div class="chart-<%= user.github_username %>", style="background-color: #63646bc9;">
+  <div class="chart-<%= user.github_username %>">
     <script>
       GitHubCalendar(".chart-<%= user.github_username %>", '<%= user.github_username %>', { responsive: true, summary_text: " ", global_stats: false, tooltips: true });
     </script>
