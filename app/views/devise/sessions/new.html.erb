@@ -1,7 +1,8 @@
 <div class="container p-5">
-  <h2 class="text-center">Log in</h2>
+  <h2 class="text-center">GitHub Contribution Charts for <em>Batch #488</em></h2>
+</div>
 
-  <div class="text-center p-5">
+  <div class="text-center p-2">
     <!--<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs" style="margin-inline: 300px;">
         <%= link_to "Sign in with Github", user_github_omniauth_authorize_path %>
@@ -20,7 +21,22 @@
     <% end %>
     -->
 
-    <div class="text-center mt-3  ">
+    <div class="images-container">
+      <div class="image-caption">
+        <%= image_tag("lazyCat.jpg", class: "image") %>
+        <p>Do you want to be a lazy ginger?</p>
+      </div>
+      <div class="image-caption">
+        <%= image_tag("ninjaOctocat.jpg", class: "image") %>
+        <p>Or do you want to be an <em>Octocat Ninja?</em></p>
+      </div>
+    </div>
+
+    <div class="text-center my-3">
+      <p>Of course you want to be an Octocat Ninja!</p>
+    </div>
+
+    <div class="text-center mt-3">
       <%= render "devise/shared/links" %>
     </div>
   </div>
