@@ -20,7 +20,7 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <div class="btn btn-success btn-lg", style="padding: 20px;">
+    <div class="btn btn-success btn-lg", style="padding: 20px; background: #6b3487; border-color: #6b3487">
       <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), style: "color: #000000;" %>
     </div>
   <% end %>
