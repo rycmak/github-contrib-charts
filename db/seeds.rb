@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+fav_rubyists = [
+  { username: "skmetz" },
+  { username: "matz" },
+  { username: "dhh" }
+]
+
+fav_rubyists.each do |user|
+  User.create!(github_username: user[:username], password: "password")
+end
+
