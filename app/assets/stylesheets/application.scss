@@ -10,8 +10,8 @@
 
 // Your CSS partials
 @import "components/index";
-@import "pages/index";
 @import "login.scss";
+@import "pages/index";
 
 body {
   background: $body-color;

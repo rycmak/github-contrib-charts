@@ -4,13 +4,17 @@
 </script>
 
 <!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
-<link
+<%# <link
   rel="stylesheet"
   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-/>
+/> %>
+
+<%# <link rel="stylesheet" href="app/assets/stylesheets/pages/_calendar.scss"/> %>
+<%= stylesheet_link_tag 'calendar' %>
+
 
 <div class="text-center mt-4">
-  <h1>GitHub Contributions for Batch #488 (+ special guests)</h1>
+  <h1>GitHub Contributions for Batch #488 (+ special Ruby luminaries)</h1>
   <p>Note: Contributions to private repositories may not show up.</p>
 </div>
 
@@ -24,3 +28,20 @@
     <%= render partial: "chart", locals: {user: user} %>
   </div>
 <% end %>
+
+<script>
+  // Remove default extra padding from chart bottom
+  const removePaddingBottom = ((chartArea) => {
+    chartArea.classList.remove("py-2");
+    chartArea.classList.add("pt-2");
+  });
+  const chartAreas = document.querySelectorAll(".border.py-2.graph-before-activity-overview");
+  chartAreas.forEach(removePaddingBottom);
+
+  // Remove default min-height for chart
+  const removeMinHeight = ((chart) => {
+    chart.style.removeProperty("min-height");
+  })
+  const charts = document.querySelectorAll("div[class^='calendar-']");
+  charts.forEach(removeMinHeight);
+</script>

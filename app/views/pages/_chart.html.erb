@@ -1,12 +1,15 @@
 <!-- Prepare a container for calendar. -->
 <div style="padding-left: 300px; padding-right: 300px;">
   <div class="user-info">
-    <%= image_tag "https://avatars.githubusercontent.com/#{user.github_username}", class: "avatar" %>
-    <%= link_to "@#{user.github_username}", "http://github.com/#{user.github_username}", style: "margin-bottom: 0px; color: #00cc00;", target: :_blank %>
+    <%= image_tag "https://avatars.githubusercontent.com/#{user.github_username}", class: "avatar", style: "margin-left: 10px;" %>
+    <%= link_to "@#{user.github_username}", "http://github.com/#{user.github_username}", style: "margin-bottom: 0px; margin-right: 5px; color: #00cc00;", target: :_blank %>
   </div>
-  <div class="chart-<%= user.github_username %>">
-    <script>
-      GitHubCalendar(".chart-<%= user.github_username %>", '<%= user.github_username %>', { responsive: true, summary_text: " ", global_stats: false, tooltips: true });
-    </script>
+  <!--<div class="chart-<%= user.github_username %>">-->
+  <div class="calendar-<%= user.github_username %>" style="min-height: 120px;">
+    <img src="https://github.githubassets.com/images/spinners/octocat-spinner-128.gif" class="spinner"/>
   </div>
 </div>
+
+<script>
+  GitHubCalendar(".calendar-<%= user.github_username %>", '<%= user.github_username %>', { responsive: true, summary_text: " ", global_stats: false, tooltips: true });
+</script>
