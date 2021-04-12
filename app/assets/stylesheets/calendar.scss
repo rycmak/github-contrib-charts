@@ -167,3 +167,7 @@ h2.f4.text-normal.mb-3 {
 .graph-before-activity-overview {
   padding-bottom: 0px;
 }
+
+div[class^="calendar-"] .float-left {
+    display: none;
+}
